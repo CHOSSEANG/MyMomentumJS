@@ -37,6 +37,8 @@ function handleToDoSubmit(event){
 function deleteTodo(event){
     // 이걸로 button의 부모 element를 확인할 수 있음
     const li = event.target.parentNode;
+    toDos = toDos.filter(toDo => toDo.id !== parseInt(li.id));
+    saveToDos(toDos);
     // 그리고 그냥 해당 element를 remove함
     li.remove();
 }
