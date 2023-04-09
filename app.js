@@ -1,9 +1,11 @@
+const loginForm = document.querySelector("#login-form")
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick(){
-    console.dir(loginInput.value);
-    console.log("click!!");
+const link = document.querySelector("a");
+
+function onLoginSubmit(tomato){
+    tomato.preventDefault();
+    console.log(loginInput.value);
 }
 
-loginButton.addEventListener("click",onLoginBtnClick)
+loginForm.addEventListener("submit",onLoginSubmit);
