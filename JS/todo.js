@@ -10,8 +10,9 @@ const TODOS_KEY = "todos";
 
 function paintTodo(newTodo){
     const li = document.createElement("li");
+    li.id = newTodo.id; // li를 구분하기 위해 id를 대입해줌
     const span = document.createElement("span");
-    span.innerText = newTodo;
+    span.innerText = newTodo.text;
     const button = document.createElement("button");
     button.innerText="X";
     button.addEventListener("click",deleteTodo);
@@ -24,8 +25,12 @@ function handleToDoSubmit(event){
     event.preventDefault();
     const newTodo = toDoInput.value;
     toDoInput.value="";
-    toDos.push(newTodo);
-    paintTodo(newTodo);
+    const newTodoObj = {
+        text:newTodo,
+        id:Date.now()
+    }
+    toDos.push(newTodoObj);
+    paintTodo(newTodoObj);
     saveToDos();
 }
 
