@@ -29,7 +29,7 @@ const savedUsername = localStorage.getItem(USERNAME_KEY);
 // 값이 있다면 form을 숨기고 Hello 텍스트를 보여주게 하는 부분
 if(savedUsername === null) {
     loginForm.classList.remove(HIDDEN_CLASSNAME);
-    loginForm.addEventListener("submit".onLoginSubmit);
+    loginForm.addEventListener("submit",onLoginSubmit);
 } else {
     paintGreetings(savedUsername);
 }
